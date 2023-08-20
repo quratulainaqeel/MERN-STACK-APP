@@ -16,7 +16,7 @@ export default function Login() {
     const handleFormSubmission = (e) => {
         e.preventDefault();
 
-        axios.get('http://localhost:3000/api/get-all-user')
+        axios.get('/api/get-all-user')
             .then((json) => {
                 const users = json.data.User;
 
@@ -37,7 +37,7 @@ export default function Login() {
                         password: password
                     }
 
-                    axios.post('http://localhost:3000/api/login', payload).then((json) => {
+                    axios.post('/api/login', payload).then((json) => {
                         Cookies.set('token', json.data.token);
                         dispatch({
                             type: "LOGIN",

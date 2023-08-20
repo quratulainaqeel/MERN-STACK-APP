@@ -9,7 +9,7 @@ export default function CategorySection() {
     const [categories, setcategories] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/get-all-category').then(json => setcategories(json.data.Category))
+        axios.get('/api/get-all-category').then(json => setcategories(json.data.Category))
     }, [])
 
     return (

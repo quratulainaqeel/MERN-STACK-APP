@@ -18,7 +18,7 @@ export default function CategoryProduct() {
   const { cart_state, cart_dispatch } = useContext(Cartcontext)
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/get-product-by-category?category=${CategoryName}`)
+    axios.get(`/api/get-product-by-category?category=${CategoryName}`)
     .then((json) => setCategoryProduct(json.data.Product)).catch((err)=>console.log(err))
   }, [CategoryName])
 

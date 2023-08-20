@@ -32,7 +32,7 @@ function CategoryModal({ recalldata }) {
                         CategoryName,
                         CategoryImage: url
                     }
-                    const URL = 'http://localhost:3000/api/create-category'
+                    const URL = '/api/create-category'
 
                     axios.post(URL, payload).then((json) => {
                         recalldata(json.data.Category)

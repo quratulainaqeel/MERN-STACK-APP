@@ -5,6 +5,7 @@ import Guest from './Guest/index'
 import { GlobalContext } from './Context/Context'
 import { decodeToken } from 'react-jwt'
 
+export const AppRoute='/'
 const ComponentRole = {
   'admin': Admin,
   'user': User,
@@ -25,7 +26,7 @@ export default function App() {
       return res?.role
     }
   }
-
+  
   const currentToken = decodeUser(state.token)
   const CurrentRole = getUserRole(currentToken)
   return <CurrentRole />

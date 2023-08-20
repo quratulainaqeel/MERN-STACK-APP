@@ -2,13 +2,14 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, json } from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
+import { AppRoute } from '../../App';
 
 export default function CatagoriesSection() {
 
   const [categories, setcategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-category').then(json => setcategories(json.data.Category))
+    axios.get(`${AppRoute}api/get-all-category`).then(json => setcategories(json.data.Category))
   }, [])
 
   return (

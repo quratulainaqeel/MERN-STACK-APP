@@ -12,7 +12,7 @@ export default function Product() {
   const [loader, setloader] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-product')
+    axios.get('/api/get-all-product')
       .then((json) => {
         setProduct(json.data.Product)
         setloader(false)
@@ -21,7 +21,7 @@ export default function Product() {
   }, [])
 
   const deleteProduct = (_id) => {
-    axios.delete('http://localhost:3000/api/delete-product', { data: { _id } })
+    axios.delete('/api/delete-product', { data: { _id } })
       .then(json => {
         setProduct(json.data.Product)
       })

@@ -28,7 +28,7 @@ export default function Sigup() {
             email: email,
             password: password
         }
-        axios.get('http://localhost:3000/api/get-all-user')
+        axios.get('/api/get-all-user')
             .then((response) => {
                 const users = response.data.User;
 
@@ -50,7 +50,7 @@ export default function Sigup() {
                         password: password
                     };
 
-                    axios.post('http://localhost:3000/api/signup', payload)
+                    axios.post('/api/signup', payload)
                         .then(json => {
                             console.log(json.data);
 

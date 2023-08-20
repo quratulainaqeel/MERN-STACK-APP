@@ -75,7 +75,7 @@ export default function Cartitems() {
           customerName: user.username,
           customerEmail: user.email
         }
-        axios.post('http://localhost:3000/api/create-order', payload).then(json => {
+        axios.post('/api/create-order', payload).then(json => {
           console.log(json.data);
           setloader(false)
         Swal.fire('Order Placed!', 'Your order has been placed successfully.', 'success');

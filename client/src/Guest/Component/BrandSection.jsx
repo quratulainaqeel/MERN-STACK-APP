@@ -6,7 +6,7 @@ export default function BrandSection() {
     const [brand, setbrand] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/get-all-brand').then(json => setbrand(json.data.Brand))
+        axios.get('/api/get-all-brand').then(json => setbrand(json.data.Brand))
     }, [])
     return (
         <>

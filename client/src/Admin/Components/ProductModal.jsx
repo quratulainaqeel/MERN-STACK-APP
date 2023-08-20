@@ -31,14 +31,14 @@ function ProductModal({ recalldata }) {
         setProductName("");
     }
     const handleShow = () => {
-        axios.get('http://localhost:3000/api/get-all-brand').then((json) => {
+        axios.get('/api/get-all-brand').then((json) => {
             setBrandVal(json.data.Brand)
             console.log(json.data.Brand)
 
         })
             .catch((err) => console.log(err))
 
-        axios.get('http://localhost:3000/api/get-all-category')
+        axios.get('/api/get-all-category')
             .then((json) => {
                 setCategoryVal(json.data.Category)
                 console.log(json.data.Category)
@@ -86,7 +86,7 @@ function ProductModal({ recalldata }) {
                             }
                             console.log("ready", payload)
 
-                            axios.post('http://localhost:3000/api/create-product', payload).then((json) => {
+                            axios.post('/api/create-product', payload).then((json) => {
                                 // console.log(json.data)
                                 recalldata(json.data.Product)
                                 setloader(false)

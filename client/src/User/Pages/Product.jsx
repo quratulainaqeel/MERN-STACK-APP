@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { Cartcontext } from '../Context/AddToCart/context';
+import { AppRoute } from '../../App';
 
 export default function Product() {
 
@@ -20,7 +21,7 @@ export default function Product() {
   const { cart_state, cart_dispatch } = useContext(Cartcontext)
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/get-product-by-id?_id=${_id}`)
+    axios.get(`${AppRoute}/api/get-product-by-id?_id=${_id}`)
       .then((json) => setproduct(json.data.Product)).catch((err) => console.log(err))
   }, [_id])
 

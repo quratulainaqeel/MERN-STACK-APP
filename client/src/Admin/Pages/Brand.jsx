@@ -12,7 +12,7 @@ export default function Brand() {
   const [loader, setloader] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-brand')
+    axios.get('/api/get-all-brand')
       .then((json) => {
         setbrand(json.data.Brand)
         setloader(false)
@@ -21,7 +21,7 @@ export default function Brand() {
   }, [])
 
   const deleteCategory = (_id) => {
-    axios.delete('http://localhost:3000/api/delete-brand', { data: { _id } })
+    axios.delete('/api/delete-brand', { data: { _id } })
       .then(json => {
         setbrand(json.data.Brand)
       })

@@ -17,7 +17,7 @@ export default function BrandProducts() {
     const { cart_state, cart_dispatch } = useContext(Cartcontext)
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/get-product-by-brand?brand=${BrandName}`)
+        axios.get(`/api/get-product-by-brand?brand=${BrandName}`)
             .then((json) => setBrandProduct(json.data.Product)).catch((err) => console.log(err))
     }, [BrandName])
 

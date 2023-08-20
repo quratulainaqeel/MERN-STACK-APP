@@ -27,11 +27,11 @@ export default function Navigationbar() {
   const handleShowBrands = () => setShowBrands(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-category').then(json => setCategories(json.data.Category));
+    axios.get('/api/get-all-category').then(json => setCategories(json.data.Category));
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-brand').then(json => setbrand(json.data.Brand));
+    axios.get('/api/get-all-brand').then(json => setbrand(json.data.Brand));
   }, []);
 
 

@@ -30,14 +30,14 @@ export default function UpdateProductModal({ recalldata, productid }) {
         setProductName("");
     }
     const handleShow = () => {
-        axios.get('http://localhost:3000/api/get-all-brand').then((json) => {
+        axios.get('/api/get-all-brand').then((json) => {
             setBrandVal(json.data.Brand)
             console.log(json.data.Brand)
 
         })
             .catch((err) => console.log(err))
 
-        axios.get('http://localhost:3000/api/get-all-category')
+        axios.get('/api/get-all-category')
             .then((json) => {
                 setCategoryVal(json.data.Category)
                 console.log(json.data.Category)
@@ -86,7 +86,7 @@ export default function UpdateProductModal({ recalldata, productid }) {
                             }
                             console.log("ready", payload)
 
-                            axios.put('http://localhost:3000/api/update-product', payload).then((json) => {
+                            axios.put('/api/update-product', payload).then((json) => {
                                 console.log(json.data)
                                 recalldata(json.data.Product)
                                 setloader(false)

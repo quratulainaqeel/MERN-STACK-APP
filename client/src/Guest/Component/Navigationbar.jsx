@@ -17,7 +17,7 @@ export default function Navigationbar() {
     const [categories, setcategories] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/get-all-category').then(json => setcategories(json.data.Category)).catch((err) => console.log(err))
+        axios.get('/api/get-all-category').then(json => setcategories(json.data.Category)).catch((err) => console.log(err))
     }, [])
 
     return (

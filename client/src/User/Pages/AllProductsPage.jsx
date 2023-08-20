@@ -15,7 +15,7 @@ export default function AllProductsPage() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/get-all-product").then((json) => setAllProducts(json.data.Product)).catch((err) => console.log(err))
+    axios.get("/api/get-all-product").then((json) => setAllProducts(json.data.Product)).catch((err) => console.log(err))
   }, [])
   // setloader(false)
 

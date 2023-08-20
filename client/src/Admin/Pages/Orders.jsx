@@ -11,7 +11,7 @@ export default function Orders() {
   const [loader, setloader] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-order')
+    axios.get('/api/get-all-order')
       .then((json) => {
         setorder(json.data.orders)
         setloader(false)

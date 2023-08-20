@@ -11,7 +11,7 @@ export default function Category() {
   const [loader, setloader] = useState(true)
  
   useEffect(() => {
-    axios.get('http://localhost:3000/api/get-all-category')
+    axios.get('/api/get-all-category')
       .then((json) => {
         setcategory(json.data.Category)
         setloader(false)
@@ -20,7 +20,7 @@ export default function Category() {
   }, [])
 
   const deleteCategory = (_id) => {
-    axios.delete('http://localhost:3000/api/delete-category', { data: { _id } })
+    axios.delete('/api/delete-category', { data: { _id } })
       .then(json => {
         setcategory(json.data.Category)
       })

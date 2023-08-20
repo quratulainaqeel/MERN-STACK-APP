@@ -30,7 +30,7 @@ export default function UpdateModal({ recalldata, categoryname }) {
                         CategoryImage: url
                     };
 
-                    axios.put('http://localhost:3000/api/update-category', payload)
+                    axios.put('/api/update-category', payload)
                         .then((json) => {
                             recalldata(json.data.Category);
                             setloader(false);
